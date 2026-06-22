@@ -866,6 +866,7 @@ table tr:nth-child(even) {
 .reject-popup {
 
   width: 400px;
+  height: 600px;
 
   background: white;
 
