@@ -1,0 +1,1336 @@
+/* =====================================================
+   src/styles/Production.css
+===================================================== */
+
+* {
+
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+  font-family: Arial;
+
+}
+
+body {
+
+  background: #f1f5f9;
+
+}
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.production-page {
+
+  padding: 15px;
+
+  height: 10vh;
+
+}
+
+/* =========================================
+   TOP HEADER
+========================================= */
+
+.top-header {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 10px;
+
+}
+
+/* =========================================
+   HEADER RIGHT
+========================================= */
+
+.header-right {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+}
+
+
+/* =====================================================
+   HEADER RIGHT SECTION
+===================================================== */
+
+.header-right {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  flex-wrap: wrap;
+
+}
+
+/* =====================================================
+   LINE DROPDOWN
+===================================================== */
+
+.header-right select {
+
+  min-width: 110px;
+
+  padding: 14px 18px;
+
+  border: 2px solid #d1d5db;
+
+  border-radius: 12px;
+
+  background: white;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  color: #ea580c;
+
+  outline: none;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.05);
+
+}
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.header-right select:hover {
+
+  border-color: #2563eb;
+
+}
+
+/* =====================================================
+   FOCUS
+===================================================== */
+
+.header-right select:focus {
+
+  border-color: #2563eb;
+
+  box-shadow: 0px 0px 8px rgba(37,99,235,0.35);
+
+}
+
+/* =====================================================
+   OPTION
+===================================================== */
+
+.header-right option {
+
+  font-size: 15px;
+
+  padding: 10px;
+
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width: 768px) {
+
+  .header-right {
+
+    width: 100%;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+  }
+
+  .header-right select {
+
+    width: 100%;
+
+  }
+
+}
+
+/* =========================================
+   NEXT BUTTON
+========================================= */
+
+.common-next-btn {
+
+  background: #0f172a;
+
+  color: white;
+
+  border: none;
+
+  padding: 12px 28px;
+
+  border-radius: 10px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+}
+
+.common-next-btn:hover {
+
+  background: #020617;
+
+}
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+.message-box {
+
+
+  color: white;
+
+  padding: 14px;
+
+  border-radius: 10px;
+
+  margin-bottom: 20px;
+
+  font-weight: bold;
+
+  font-size: 15px;
+
+}
+
+/* =====================================================
+   STATION WRAPPER
+===================================================== */
+
+.stations-wrapper {
+
+  display: flex;
+
+  gap: 20px;
+
+  align-items: flex-start;
+
+}
+
+/* =====================================================
+   STATION CARD
+===================================================== */
+
+.station-card {
+
+  flex: 1;
+
+  background: white;
+
+  border-radius: 16px;
+
+  padding: 20px;
+
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+  min-height: 300px;
+
+  transition: 0.3s;
+
+}
+
+.station-card:hover {
+
+  transform: translateY(-3px);
+
+}
+
+/* =====================================================
+   ACTIVE STATION
+===================================================== */
+
+.active-card {
+
+  border: 3px solid #87CEEB;
+
+  background: #f8fbff;
+
+}
+
+/* =====================================================
+   TITLES
+===================================================== */
+
+.station-card h2 {
+
+  color: #0f172a;
+
+  margin-bottom: 5px;
+
+  font-size: 28px;
+
+}
+
+.station-card p {
+
+  color: #64748b;
+
+  margin-bottom: 20px;
+
+  font-size: 15px;
+
+}
+
+/* =====================================================
+   INPUTS
+===================================================== */
+
+.station-card input,
+.station-card select {
+
+  width: 100%;
+
+  padding: 13px;
+
+  border-radius: 10px;
+
+  border: 1px solid #87CEEB;
+
+  margin-bottom: 15px;
+
+  outline: none;
+
+  font-size: 15px;
+
+}
+
+.station-card input:focus,
+.station-card select:focus {
+
+  border: 1px solid #87CEEB;
+
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.station-card button {
+
+  width: 100%;
+
+  padding: 13px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  color: white;
+
+  font-size: 15px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+  margin-bottom: 15px;
+
+}
+
+/* =====================================================
+   BUTTON COLORS
+===================================================== */
+
+.green-btn {
+
+  background: #334155;
+
+}
+
+.green-btn:hover {
+
+  background: #c2410c;
+
+}
+
+.blue-btn {
+
+  background: #334155;
+
+}
+
+.blue-btn:hover {
+
+  background: #c2410c;
+
+}
+
+.orange-btn {
+
+  background: #334155;
+
+}
+
+.orange-btn:hover {
+
+  background: #c2410c;
+
+}
+
+.dark-btn {
+
+  background: #0f172a;
+
+}
+
+.dark-btn:hover {
+
+  background: #020617;
+
+}
+
+/* =====================================================
+   BARCODE BOX
+===================================================== */
+
+.barcode-box {
+
+  border: 2px dashed #E9F1E1;
+
+  background: #f8fafc;
+
+  padding: 20px;
+
+  border-radius: 14px;
+
+  text-align: center;
+
+  margin-bottom: 20px;
+
+}
+
+.barcode-box h3 {
+
+  color: #0f172a;
+
+  margin-bottom: 15px;
+
+  font-size: 24px;
+
+}
+
+.barcode-box img {
+
+  width: 240px;
+
+  max-width: 100%;
+
+  margin-bottom: 15px;
+
+}
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+table {
+
+  width: 100%;
+
+  border-collapse: collapse;
+
+  margin-top: 10px;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
+}
+
+table th {
+
+  background: #1e293b;
+
+  color: white;
+
+  padding: 12px;
+
+  font-size: 14px;
+
+}
+
+table td {
+
+  padding: 10px;
+
+  border: 1px solid #e2e8f0;
+
+  text-align: center;
+
+  font-size: 14px;
+
+}
+
+table tr:nth-child(even) {
+
+  background: #f8fafc;
+
+}
+
+/* =====================================================
+   STATUS COLORS
+===================================================== */
+
+.ok-status {
+
+  color: #16a34a;
+
+  font-weight: bold;
+
+}
+
+.ng-status {
+
+  color: #dc2626;
+
+  font-weight: bold;
+
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width: 1200px) {
+
+  .stations-wrapper {
+
+    flex-direction: column;
+
+  }
+
+  .station-card {
+
+    width: 100%;
+
+    min-height: auto;
+
+  }
+
+}
+
+@media(max-width: 768px) {
+
+  .top-header {
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    align-items: flex-start;
+
+  }
+
+  .top-header h1 {
+
+    font-size: 24px;
+
+  }
+
+}
+
+/* =========================================
+   DISPLAY RESULT BOX
+========================================= */
+
+.result-box {
+  margin-top: 15px;
+  padding: 18px;
+  background: #f8fafc;
+  border-radius: 10px;
+  border-left: 5px solid #64748b;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* =========================================
+   TITLE
+========================================= */
+
+.result-box h3 {
+  margin-bottom: 12px;
+  color: #0f172a;
+  font-size: 18px;
+}
+
+/* =========================================
+   TEXT
+========================================= */
+
+.result-box p {
+  margin-bottom: 10px;
+  color: #334155;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* =========================================
+   UID TEXT
+========================================= */
+
+.result-box p strong {
+  color: #0f172a;
+}
+
+/* =========================================
+   OK RESULT
+========================================= */
+
+.ok-text {
+  color: #16a34a;
+  font-weight: bold;
+  background: #dcfce7;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* =========================================
+   NG RESULT
+========================================= */
+
+.ng-text {
+  color: #dc2626;
+  font-weight: bold;
+  background: #fee2e2;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* =========================================
+   TORQUE VALUE STYLE
+========================================= */
+
+.torque-value {
+  color: #ea580c;
+  font-weight: bold;
+}
+
+/* =========================================
+   ELECTRICAL VALUE STYLE
+========================================= */
+
+.electrical-value {
+  color: #ea580c;
+  font-weight: bold;
+}
+
+/* =========================================
+   HOVER EFFECT
+========================================= */
+
+.result-box:hover {
+  transform: translateY(-2px);
+  transition: 0.2s;
+}
+
+/* =====================================================
+   FINISHED BATCH MESSAGE
+===================================================== */
+
+.message-box {
+
+  width: 100%;
+
+  padding: 16px 20px;
+
+  margin-bottom: 20px;
+
+  border-radius: 12px;
+
+  font-size: 17px;
+
+  font-weight: bold;
+
+  text-align: center;
+
+  letter-spacing: 0.3px;
+
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+
+  animation: fadeIn 0.3s ease;
+}
+
+/* =====================================================
+   NORMAL SUCCESS
+===================================================== */
+
+.message-box.success {
+
+  background: #5D6C6F;
+
+  color: white;
+
+  border: 2px solid #15803d;
+}
+
+/* =====================================================
+   FINISHED BATCH ALERT
+===================================================== */
+
+.message-box.finished {
+
+  background: #dc2626;
+
+  color: white;
+
+  border: 2px solid #b91c1c;
+
+  font-size: 11px;
+
+  line-height: 28px;
+}
+
+/* =====================================================
+   ANIMATION
+===================================================== */
+
+@keyframes fadeIn {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateY(-8px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+  }
+
+}
+
+/* ========================================= */
+/* BUTTON CONTAINER */
+/* ========================================= */
+
+.production-buttons {
+
+  display: flex;
+
+  gap: 15px;
+
+  margin-top: 25px;
+
+  flex-wrap: wrap;
+
+}
+
+/* ========================================= */
+/* COMMON BUTTON STYLE */
+/* ========================================= */
+
+.production-buttons button {
+
+  min-width: 140px;
+
+  padding: 14px 22px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  color: white;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+
+}
+
+
+/* ========================================= */
+/* NEXT BUTTON */
+/* ========================================= */
+
+.next-btn {
+
+  background: linear-gradient(
+    135deg,
+    #16a34a,
+    #15803d
+  );
+
+}
+
+.next-btn:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 6px 14px rgba(22,163,74,0.4);
+
+}
+
+/* ========================================= */
+/* REJECT BUTTON */
+/* ========================================= */
+
+.reject-btn {
+
+  background: linear-gradient(
+    135deg,
+    #dc2626,
+    #b91c1c
+  );
+
+}
+
+.reject-btn:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 6px 14px rgba(220,38,38,0.4);
+
+}
+
+/* ========================================= */
+/* BUTTON CLICK EFFECT */
+/* ========================================= */
+
+.production-buttons button:active {
+
+  transform: scale(0.96);
+
+}
+
+/* ========================================= */
+/* POPUP OVERLAY */
+/* ========================================= */
+
+.reject-popup-overlay {
+
+  position: fixed;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  background: rgba(0,0,0,0.5);
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  z-index: 999;
+
+}
+
+/* ========================================= */
+/* POPUP BOX */
+/* ========================================= */
+
+.reject-popup {
+
+  width: 400px;
+
+  background: white;
+
+  border-radius: 14px;
+
+  padding: 30px;
+
+  box-shadow: 0 4px 18px rgba(0,0,0,0.2);
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+
+}
+
+/* ========================================= */
+/* TITLE */
+/* ========================================= */
+
+.reject-popup h2 {
+
+  text-align: center;
+
+  color: #dc2626;
+
+}
+
+/* ========================================= */
+/* INPUT */
+/* ========================================= */
+
+.reject-popup input,
+.reject-popup textarea {
+
+  padding: 12px;
+
+  border: 1px solid #cbd5e1;
+
+  border-radius: 8px;
+
+  font-size: 15px;
+
+}
+
+/* ========================================= */
+/* BUTTON AREA */
+/* ========================================= */
+
+.popup-buttons {
+
+  display: flex;
+
+  gap: 10px;
+
+}
+
+/* ========================================= */
+/* CONFIRM */
+/* ========================================= */
+
+.confirm-btn {
+
+  flex: 1;
+
+  background: #dc2626;
+
+  color: white;
+
+  border: none;
+
+  padding: 12px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-weight: bold;
+
+}
+
+/* ========================================= */
+/* CANCEL */
+/* ========================================= */
+
+.cancel-btn {
+
+  flex: 1;
+
+  background: #64748b;
+
+  color: white;
+
+  border: none;
+
+  padding: 12px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-weight: bold;
+
+}
+/* ========================================= */
+/* DROPDOWN */
+/* ========================================= */
+
+.reject-popup select {
+
+  padding: 12px;
+
+  border: 1px solid #cbd5e1;
+
+  border-radius: 8px;
+
+  font-size: 15px;
+
+  background: #64748b;
+
+}
+.next-btn {
+
+  margin-top: 12px;
+
+  width: 100%;
+
+  padding: 12px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background:#5D6C6F;
+
+  color: white;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+}
+
+.next-btn:hover {
+
+  background: #1e293b;
+
+  transform: translateY(-1px);
+
+}
+
+.batch-selection-list {
+
+  max-height: 220px;
+
+  overflow-y: auto;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 8px;
+
+  padding: 10px;
+
+  background: #87CEEB;
+
+}
+
+.batch-checkbox {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 8px;
+
+  font-size: 14px;
+
+}
+.finished-batch-alert {
+
+  background: #fff3cd;
+
+  border: 2px solid #ffc107;
+
+  padding: 12px;
+
+  border-radius: 10px;
+
+  margin-bottom: 15px;
+
+}
+
+.finished-row {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 10px;
+
+}
+
+.finished-badge {
+
+  background: white;
+
+  padding: 8px 14px;
+
+  border-radius: 20px;
+
+  font-size: 14px;
+
+  border: 1px solid #ccc;
+
+  font-weight: bold;
+
+}
+
+/* =====================================================
+   LINE B SMALL STATION
+===================================================== */
+
+.line-b-card {
+
+  flex: unset !important;
+
+  width: 650px !important;
+
+  max-width: 650px !important;
+
+  min-height: auto !important;
+
+  margin: auto;
+}
+
+.line-b-card h2 {
+
+  font-size: 22px !important;
+
+}
+
+.line-b-card p {
+
+  font-size: 14px !important;
+
+}
+
+.line-b-card input,
+.line-b-card select {
+
+  padding: 10px !important;
+
+}
+
+.line-b-card .barcode-box {
+
+  padding: 12px !important;
+
+}
+
+.line-b-card .barcode-box h3 {
+
+  font-size: 18px !important;
+
+}
+
+.line-b-card .barcode-box img {
+
+  width: 180px !important;
+
+}
+
+.line-b-card table th {
+
+  padding: 8px !important;
+
+  font-size: 13px !important;
+
+}
+
+.line-b-card table td {
+
+  padding: 8px !important;
+
+  font-size: 13px !important;
+
+}
+
+/* =====================================================
+   LINE C SMALL STATION
+===================================================== */
+
+.line-c-card {
+
+  flex: unset !important;
+
+  width: 650px !important;
+
+  max-width: 650px !important;
+
+  min-height: auto !important;
+
+  margin: auto;
+}
+
+.line-c-card h2 {
+
+  font-size: 22px !important;
+
+}
+
+.line-c-card p {
+
+  font-size: 14px !important;
+
+}
+
+.line-c-card input,
+.line-c-card select {
+
+  padding: 10px !important;
+
+}
+
+.line-c-card .barcode-box {
+
+  padding: 12px !important;
+
+}
+
+.line-c-card .barcode-box h3 {
+
+  font-size: 18px !important;
+
+}
+
+.line-c-card .barcode-box img {
+
+  width: 180px !important;
+
+}
+
+.line-c-card table th {
+
+  padding: 8px !important;
+
+  font-size: 13px !important;
+
+  text-align: center !important;
+
+}
+
+.line-c-card table td {
+
+  padding: 8px !important;
+
+  font-size: 13px !important;
+
+  text-align: center !important;
+
+}
+
+/* =====================================================
+   LINE D SMALL STATION
+===================================================== */
+
+.line-d-card {
+
+  flex: unset !important;
+
+  width: 650px !important;
+
+  max-width: 650px !important;
+
+  min-height: auto !important;
+
+  margin: auto;
+}
+
+.line-d-card h2 {
+
+  font-size: 22px !important;
+
+}
+
+.line-d-card p {
+
+  font-size: 14px !important;
+
+}
+
+.line-d-card input,
+.line-d-card select {
+
+  padding: 10px !important;
+
+}
+
+.line-d-card .barcode-box {
+
+  padding: 12px !important;
+
+}
+
+.line-d-card .barcode-box h3 {
+
+  font-size: 18px !important;
+
+}
+
+.line-d-card .barcode-box img {
+
+  width: 180px !important;
+
+}
+
+.line-d-card table th {
+
+  padding: 8px !important;
+
+  font-size: 13px !important;
+
+  text-align: center !important;
+
+}
+
+.line-d-card table td {
+
+  padding: 8px !important;
+
+  font-size: 13px !important;
+
+  text-align: center !important;
+
+}
+
+.partial-reject-btn {
+
+  background: #ff9800;
+
+  color: white;
+
+  border: none;
+
+  padding: 10px 15px;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  margin-left: 10px;
+
+}
+
+.partial-reject-btn:hover {
+
+  background: #e68900;
+
+}

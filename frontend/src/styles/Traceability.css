@@ -1,0 +1,218 @@
+/* ==========================================
+TRACEABILITY PAGE
+========================================== */
+
+.trace-page {
+padding: 20px;
+background-color: #f4f6f9;
+min-height: 100vh;
+font-family: Arial, sans-serif;
+}
+
+/* ==========================================
+HEADER
+========================================== */
+
+.trace-header {
+text-align: center;
+margin-bottom: 20px;
+}
+
+.trace-header h1 {
+color: #64748b;
+font-size: 32px;
+font-weight: 700;
+margin: 0;
+}
+
+/* ==========================================
+SEARCH SECTION
+========================================== */
+
+.trace-search {
+display: flex;
+gap: 10px;
+margin-bottom: 20px;
+}
+
+.trace-search input {
+flex: 1;
+padding: 12px;
+border: 1px solid #cbd5e1;
+border-radius: 8px;
+font-size: 15px;
+background: white;
+}
+
+.trace-search input:focus {
+outline: none;
+border-color: #2563eb;
+box-shadow: 0 0 5px rgba(37,99,235,0.3);
+}
+
+.trace-search button {
+padding: 12px 20px;
+border: none;
+background: #1f2937;
+color: white;
+border-radius: 8px;
+cursor: pointer;
+font-weight: 600;
+transition: 0.3s;
+}
+
+.trace-search button:hover {
+background: #ea580c;
+}
+
+/* ==========================================
+ERROR BOX
+========================================== */
+
+.error-box {
+background: #fee2e2;
+color: #dc2626;
+padding: 12px;
+border-radius: 8px;
+margin-bottom: 20px;
+font-weight: 600;
+text-align: center;
+}
+
+/* ==========================================
+SERIAL CARD
+========================================== */
+
+.serial-card {
+background: white;
+padding: 15px;
+border-radius: 10px;
+margin-bottom: 20px;
+text-align: center;
+box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.serial-card h2 {
+margin: 0;
+color: #111827;
+}
+
+/* ==========================================
+UID SECTION
+========================================== */
+
+.uid-section {
+margin-bottom: 30px;
+}
+
+.uid-section h2 {
+text-align: center;
+color: #2563eb;
+margin-bottom: 15px;
+}
+
+.uid-section h3 {
+text-align: center;
+color: #111827;
+margin-top: 20px;
+margin-bottom: 15px;
+}
+
+/* ==========================================
+UID CARD
+========================================== */
+
+.uid-card {
+background: white;
+padding: 15px;
+border-radius: 10px;
+margin-bottom: 20px;
+box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+
+
+display: grid;
+grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+gap: 10px;
+
+
+}
+
+.uid-card p {
+margin: 0;
+padding: 10px;
+background: #f8fafc;
+border-radius: 6px;
+}
+
+/* ==========================================
+BATCH TABLE
+========================================== */
+
+.batch-table {
+width: 100%;
+border-collapse: collapse;
+background: white;
+border-radius: 10px;
+overflow: hidden;
+margin-bottom: 20px;
+box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.batch-table th {
+background: #1f2937;
+color: white;
+padding: 12px;
+text-align: center;
+vertical-align: middle;
+font-weight: 600;
+}
+
+.batch-table td {
+padding: 10px;
+border-bottom: 1px solid #e5e7eb;
+text-align: center;
+vertical-align: middle;
+}
+
+.batch-table tr:nth-child(even) {
+background: #f8fafc;
+}
+
+.batch-table tr:hover {
+background: #eef2ff;
+}
+
+/* ==========================================
+STATION CARDS
+========================================== */
+
+.station-list {
+display: flex;
+flex-wrap: wrap;
+gap: 15px;
+justify-content: center;
+}
+
+/* ==========================================
+RESPONSIVE
+========================================== */
+
+@media (max-width: 768px) {
+
+
+.trace-search {
+    flex-direction: column;
+}
+
+.trace-search button {
+    width: 100%;
+}
+
+.batch-table {
+    font-size: 13px;
+}
+
+.uid-card {
+    grid-template-columns: 1fr;
+}
+}

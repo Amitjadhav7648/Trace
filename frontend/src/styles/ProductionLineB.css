@@ -1,0 +1,355 @@
+/* ===================================================== */
+/* Production Line B CSS */
+/* ===================================================== */
+
+.production-page {
+  padding: 20px;
+  background: #f4f6f9;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* ===================================================== */
+/* HEADER */
+/* ===================================================== */
+
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 10px;
+
+  margin-bottom: 20px;
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.top-header h1 {
+  margin: 0;
+  color: #333;
+}
+
+.header-right {
+  display: flex;
+  gap: 10px;
+}
+
+.header-right select {
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* ===================================================== */
+/* BUTTONS */
+/* ===================================================== */
+
+.production-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.green-btn,
+.orange-btn,
+.blue-btn,
+.dark-btn,
+.next-btn,
+.reject-btn,
+.confirm-btn,
+.cancel-btn {
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 18px;
+  font-weight: bold;
+}
+
+.green-btn {
+  background: #28a745;
+}
+
+.orange-btn {
+  background: #fd7e14;
+}
+
+.blue-btn {
+  background: #007bff;
+}
+
+.dark-btn {
+  background: #343a40;
+}
+
+.next-btn {
+  background: #20c997;
+}
+
+.reject-btn {
+  background: #dc3545;
+}
+
+.confirm-btn {
+  background: #dc3545;
+}
+
+.cancel-btn {
+  background: #6c757d;
+}
+
+/* ===================================================== */
+/* MESSAGE */
+/* ===================================================== */
+
+.message-box {
+  margin-bottom: 20px;
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.message-box.success {
+  background: #d4edda;
+  color: #155724;
+}
+
+.message-box.finished {
+  background: #fff3cd;
+  color: #856404;
+}
+
+/* ===================================================== */
+/* FINISHED BATCH */
+/* ===================================================== */
+
+.finished-batch-alert {
+  background: #fff3cd;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.finished-batch-alert h2 {
+  margin-top: 0;
+}
+
+.finished-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.finished-badge {
+  background: white;
+  border: 1px solid #ffc107;
+  border-radius: 8px;
+  padding: 10px;
+  min-width: 180px;
+}
+
+/* ===================================================== */
+/* STATION */
+/* ===================================================== */
+
+.stations-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.station-card {
+  width: 100%;
+  max-width: 900px;
+
+  background: white;
+  border-radius: 10px;
+
+  padding: 20px;
+
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.active-card {
+  border: 3px solid #28a745;
+}
+
+.station-card h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.station-card p {
+  color: #666;
+}
+
+.station-card input,
+.station-card select,
+.station-card textarea {
+  width: 100%;
+
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+  box-sizing: border-box;
+}
+
+/* ===================================================== */
+/* BARCODE */
+/* ===================================================== */
+
+.barcode-box {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.barcode-box h3 {
+  margin-bottom: 10px;
+}
+
+.barcode-box img {
+  width: 320px;
+  max-width: 100%;
+}
+
+/* ===================================================== */
+/* TABLE */
+/* ===================================================== */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table thead {
+  background: #343a40;
+  color: white;
+}
+
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+table tbody tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+/* ===================================================== */
+/* REJECT POPUP */
+/* ===================================================== */
+
+.reject-popup-overlay {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0,0,0,0.5);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+}
+
+.reject-popup {
+  width: 500px;
+  max-height: 80vh;
+
+  overflow-y: auto;
+
+  background: white;
+  padding: 20px;
+
+  border-radius: 10px;
+}
+
+.reject-popup h2 {
+  margin-top: 0;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+/* ===================================================== */
+/* BATCH LIST */
+/* ===================================================== */
+
+.batch-selection-list {
+  max-height: 250px;
+  overflow-y: auto;
+
+  border: 1px solid #ddd;
+  padding: 10px;
+
+  margin-bottom: 15px;
+}
+
+.batch-checkbox {
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* ===================================================== */
+/* RESULT */
+/* ===================================================== */
+
+.result-box {
+  margin-top: 20px;
+  padding: 15px;
+
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.ok-text {
+  color: green;
+  font-weight: bold;
+}
+
+.ng-text {
+  color: red;
+  font-weight: bold;
+}
+
+/* ===================================================== */
+/* RESPONSIVE */
+/* ===================================================== */
+
+@media (max-width: 768px) {
+
+  .top-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header-right {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .station-card {
+    width: 100%;
+  }
+
+  .barcode-box img {
+    width: 220px;
+  }
+
+}

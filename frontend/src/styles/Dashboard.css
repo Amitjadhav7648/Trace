@@ -1,0 +1,299 @@
+
+/* ==========================================
+   DASHBOARD PAGE
+========================================== */
+
+.dashboard-container {
+    min-height: 100vh;
+    padding: 30px;
+    background: linear-gradient(
+        135deg,
+        #eef2ff,
+        #f8fafc
+    );
+}
+
+/* ==========================================
+   TITLE
+========================================== */
+
+.dashboard-title {
+    text-align: left;
+    font-size: 37px;
+    font-weight: 600;
+    margin-bottom: 10px;
+
+    background: linear-gradient(
+        90deg,
+        #64748b
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ==========================================
+   SUMMARY CARDS
+========================================== */
+
+.summary-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.summary-card {
+    width: 250px;
+    padding: 20px;
+    border-radius: 16px;
+    background: white;
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.08);
+
+    text-align: center;
+}
+
+.summary-card h3 {
+    margin: 0;
+    color: #475569;
+    font-size: 18px;
+}
+
+.summary-card span {
+    display: block;
+    margin-top: 12px;
+    font-size: 36px;
+    font-weight: 700;
+    color: #2563eb;
+}
+
+/* ==========================================
+   LINE GRID
+========================================== */
+
+.line-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+/* ==========================================
+   LINE CARDS
+========================================== */
+
+.line-card {
+
+    position: relative;
+    overflow: hidden;
+
+    cursor: pointer;
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    color: white;
+
+    text-align: center;
+
+    transition: all 0.35s ease;
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.15);
+}
+
+/* ==========================================
+   SHINE EFFECT
+========================================== */
+
+.line-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -100%;
+
+    left: -150%;
+
+    width: 60%;
+
+    height: 300%;
+
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.45),
+        transparent
+    );
+
+    transform: rotate(25deg);
+
+    animation: shineMove 4s linear infinite;
+}
+
+/* ==========================================
+   LINE COLORS
+========================================== */
+
+.line-card:nth-child(1) {
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+}
+
+.line-card:nth-child(2) {
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #6d28d9
+    );
+}
+
+.line-card:nth-child(3) {
+    background: linear-gradient(
+        135deg,
+        #0891b2,
+        #0e7490
+    );
+}
+
+.line-card:nth-child(4) {
+    background: linear-gradient(
+        135deg,
+        #16a34a,
+        #15803d
+    );
+}
+
+/* ==========================================
+   HOVER EFFECT
+========================================== */
+
+.line-card:hover {
+
+    transform:
+        translateY(-10px)
+        scale(1.03);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,0.25),
+        0 0 25px rgba(255,255,255,0.25);
+}
+
+.line-card:hover::before {
+    animation-duration: 1.2s;
+}
+
+/* ==========================================
+   CARD CONTENT
+========================================== */
+
+.line-card h2 {
+
+    margin-bottom: 10px;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    position: relative;
+    z-index: 2;
+}
+
+.line-card p {
+
+    font-size: 15px;
+
+    opacity: 0.95;
+
+    position: relative;
+    z-index: 2;
+}
+
+/* ==========================================
+   UID COUNTER
+========================================== */
+
+.uid-counter {
+
+    margin-top: 20px;
+
+    background:
+        rgba(255,255,255,0.18);
+
+    border:
+        1px solid rgba(255,255,255,0.30);
+
+    backdrop-filter: blur(8px);
+
+    border-radius: 14px;
+
+    padding: 12px;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    position: relative;
+    z-index: 2;
+}
+
+.uid-counter span {
+
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 34px;
+
+    font-weight: 800;
+
+    color: white;
+}
+
+/* ==========================================
+   SHINE ANIMATION
+========================================== */
+
+@keyframes shineMove {
+
+    0% {
+        left: -150%;
+    }
+
+    100% {
+        left: 250%;
+    }
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 1200px) {
+
+    .line-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .summary-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .line-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-title {
+        font-size: 32px;
+    }
+}

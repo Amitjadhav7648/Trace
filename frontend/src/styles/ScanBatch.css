@@ -1,0 +1,652 @@
+/* =====================================================
+   FULL PROFESSIONAL SCAN BATCH CSS
+===================================================== */
+
+* {
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Segoe UI", sans-serif;
+
+}
+
+body {
+
+  background: #f4f7fb;
+
+}
+
+/* =====================================================
+   MAIN PAGE
+===================================================== */
+
+.batch-page {
+
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eef2ff,
+      #f8fafc
+    );
+
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.top-header {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 25px;
+
+  padding: 18px 25px;
+
+  background: white;
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 4px 15px rgba(0,0,0,0.08);
+
+}
+
+.top-header h1 {
+
+  color: #64748b;
+
+  font-size: 28px;
+
+  font-weight: 700;
+
+}
+
+/* =====================================================
+   HEADER BUTTONS
+===================================================== */
+
+.production-btn,
+.replace-all-btn {
+
+  border: none;
+
+  padding: 12px 18px;
+
+  border-radius: 10px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+  margin-left: 10px;
+
+}
+
+.production-btn {
+
+  background: #16a34a;
+
+  color: white;
+
+}
+
+.production-btn:hover {
+
+  background: #0f172a;
+
+  transform: translateY(-2px);
+
+}
+
+.replace-all-btn {
+
+  background: #dc2626;
+
+  color: white;
+
+}
+
+.replace-all-btn:hover {
+
+  background: #b91c1c;
+
+  transform: translateY(-2px);
+
+}
+
+/* =====================================================
+   SCAN CONTAINER
+===================================================== */
+
+.scan-container {
+
+  display: flex;
+
+  gap: 15px;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  padding: 20px;
+
+  background: white;
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 4px 15px rgba(0,0,0,0.08);
+
+  margin-bottom: 25px;
+
+}
+
+/* =====================================================
+   INPUTS + SELECT
+===================================================== */
+
+.scan-container select,
+.scan-container input {
+
+  height: 45px;
+
+  border: 2px solid #dbeafe;
+
+  border-radius: 10px;
+
+  padding: 0 15px;
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition: 0.3s;
+
+  background: #f8fafc;
+
+}
+
+.scan-container select {
+
+  width: 180px;
+
+}
+
+.scan-container input {
+
+  width: 300px;
+
+}
+
+.scan-container select:focus,
+.scan-container input:focus {
+
+  border-color: #2563eb;
+
+  background: white;
+
+  box-shadow:
+    0 0 0 3px rgba(37,99,235,0.15);
+
+}
+
+/* =====================================================
+   SCAN BUTTON
+===================================================== */
+
+.scan-btn {
+
+  height: 45px;
+
+  border: none;
+
+  padding: 0 22px;
+
+  border-radius: 10px;
+
+  background: linear-gradient(
+    135deg,
+    #1e293b
+  );
+
+  color: white;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+}
+
+.scan-btn:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 6px 15px rgba(37,99,235,0.3);
+
+}
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+.message-box {
+
+  padding: 14px 20px;
+
+  border-radius: 12px;
+
+  background: #dcfce7;
+
+  color: #166534;
+
+  font-weight: 600;
+
+  margin-bottom: 20px;
+
+  box-shadow:
+    0 4px 10px rgba(0,0,0,0.05);
+
+}
+
+/* =====================================================
+   BATCH GRID
+===================================================== */
+
+.batch-box-container {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(7, 1fr);
+
+  gap: 12px;
+
+}
+
+/* =====================================================
+   BATCH BOX
+===================================================== */
+
+.batch-box {
+
+  position: relative;
+
+  background: #cbd5e1;
+
+  border-radius: 14px;
+
+  padding: 14px;
+
+  min-height: 230px;
+
+  transition: 0.3s;
+
+  border: 2px solid transparent;
+
+  box-shadow:
+    0 3px 10px rgba(0,0,0,0.06);
+
+  overflow: hidden;
+
+}
+
+.batch-box:hover {
+
+  transform: translateY(-5px);
+
+  border-color: #2563eb;
+
+  box-shadow:
+    0 10px 25px rgba(37,99,235,0.18);
+
+}
+
+/* =====================================================
+   BATCH TITLE
+===================================================== */
+
+.batch-title {
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  color: #1e293b;
+
+  margin-bottom: 12px;
+
+  text-align: center;
+
+  background: #eff6ff;
+
+  padding: 8px;
+
+  border-radius: 8px;
+
+}
+
+/* =====================================================
+   ROWS
+===================================================== */
+
+.batch-row {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-bottom: 7px;
+
+  font-size: 12px;
+
+}
+
+.batch-row span:first-child {
+
+  color: #64748b;
+
+  font-weight: 600;
+
+}
+
+.batch-row span:last-child {
+
+  color: #0f172a;
+
+  font-weight: 700;
+
+}
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status-active {
+
+  color: #16a34a !important;
+
+  font-weight: bold;
+
+}
+
+/* =====================================================
+   LINE TAG
+===================================================== */
+
+.line-tag {
+
+  position: absolute;
+
+  top: 10px;
+  right: 10px;
+
+  background: #2563eb;
+
+  color: white;
+
+  padding: 4px 10px;
+
+  border-radius: 20px;
+
+  font-size: 11px;
+
+  font-weight: bold;
+
+}
+
+/* =====================================================
+   REPLACE BUTTON
+===================================================== */
+
+.replace-btn {
+
+  width: 100%;
+
+  margin-top: 12px;
+
+  border: none;
+
+  background: linear-gradient(
+    135deg,
+    #f59e0b,
+    #d97706
+  );
+
+  color: white;
+
+  padding: 9px;
+
+  border-radius: 8px;
+
+  font-size: 12px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transform: translateY(8px);
+
+}
+
+.batch-box:hover .replace-btn {
+
+  opacity: 1;
+
+  visibility: visible;
+
+  transform: translateY(0);
+
+}
+
+.replace-btn:hover {
+
+  transform: scale(1.02);
+
+}
+
+/* =====================================================
+   POPUP
+===================================================== */
+
+.popup-overlay {
+
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0,0,0,0.5);
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  z-index: 999;
+
+}
+
+.popup-box {
+
+  width: 400px;
+
+  background: white;
+
+  border-radius: 16px;
+
+  padding: 25px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.2);
+
+}
+
+.popup-box h2 {
+
+  margin-bottom: 20px;
+
+  color: #1e293b;
+
+}
+
+.popup-box input {
+
+  width: 100%;
+
+  height: 45px;
+
+  border: 2px solid #cbd5e1;
+
+  border-radius: 10px;
+
+  padding: 0 15px;
+
+  margin-bottom: 20px;
+
+  outline: none;
+
+}
+
+.popup-box input:focus {
+
+  border-color: #2563eb;
+
+}
+
+.popup-buttons {
+
+  display: flex;
+
+  gap: 10px;
+
+}
+
+.popup-buttons button {
+
+  flex: 1;
+
+  height: 42px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+}
+
+.popup-buttons button:first-child {
+
+  background: #16a34a;
+
+  color: white;
+
+}
+
+.popup-buttons button:first-child:hover {
+
+  background: #15803d;
+
+}
+
+.popup-buttons button:last-child {
+
+  background: #dc2626;
+
+  color: white;
+
+}
+
+.popup-buttons button:last-child:hover {
+
+  background: #b91c1c;
+
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1700px) {
+
+  .batch-box-container {
+
+    grid-template-columns:
+      repeat(5, 1fr);
+
+  }
+
+}
+
+@media (max-width: 1300px) {
+
+  .batch-box-container {
+
+    grid-template-columns:
+      repeat(4, 1fr);
+
+  }
+
+}
+
+@media (max-width: 1000px) {
+
+  .batch-box-container {
+
+    grid-template-columns:
+      repeat(3, 1fr);
+
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .batch-box-container {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+  }
+
+}
+
+@media (max-width: 500px) {
+
+  .batch-box-container {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+}

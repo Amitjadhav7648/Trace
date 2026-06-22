@@ -1,0 +1,238 @@
+.final-page {
+
+min-height: 100vh;
+
+background: linear-gradient(
+135deg,
+#eef2f7,
+#dbe5f1
+);
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+padding: 30px;
+
+}
+
+.final-card {
+
+width: 650px;
+
+background: #ffffff;
+
+border-radius: 15px;
+
+padding: 30px;
+
+box-shadow:
+0 8px 20px rgba(0,0,0,0.15);
+
+}
+
+.final-card h1 {
+
+text-align: center;
+
+color: #1f2937;
+
+margin-bottom: 25px;
+
+font-size: 30px;
+
+font-weight: 700;
+
+}
+
+.input-group {
+
+margin-bottom: 15px;
+
+}
+
+.input-group label {
+
+display: block;
+
+margin-bottom: 5px;
+
+font-weight: 600;
+
+color: #374151;
+
+}
+
+.final-card input {
+
+width: 100%;
+
+padding: 12px;
+
+border: 2px solid #d1d5db;
+
+border-radius: 8px;
+
+font-size: 16px;
+
+transition: 0.3s;
+
+box-sizing: border-box;
+
+}
+
+.final-card input:focus {
+
+outline: none;
+
+border-color: #2563eb;
+
+box-shadow:
+0 0 5px rgba(37,99,235,0.4);
+
+}
+
+.serial-box {
+
+background: #f3f4f6;
+
+border: 2px dashed #2563eb;
+
+border-radius: 10px;
+
+padding: 15px;
+
+text-align: center;
+
+margin-top: 15px;
+
+margin-bottom: 15px;
+
+}
+
+.serial-title {
+
+font-size: 14px;
+
+color: #6b7280;
+
+}
+
+.serial-number {
+
+font-size: 24px;
+
+font-weight: bold;
+
+color: #2563eb;
+
+margin-top: 5px;
+
+}
+
+.fetch-btn {
+
+width: 100%;
+
+padding: 12px;
+
+border: none;
+
+border-radius: 8px;
+
+background: #f59e0b;
+
+color: white;
+
+font-size: 16px;
+
+font-weight: 600;
+
+cursor: pointer;
+
+margin-bottom: 10px;
+
+}
+
+.fetch-btn:hover {
+
+background: #d97706;
+
+}
+
+.save-btn {
+
+width: 100%;
+
+padding: 14px;
+
+border: none;
+
+border-radius: 8px;
+
+background: #16a34a;
+
+color: white;
+
+font-size: 18px;
+
+font-weight: 700;
+
+cursor: pointer;
+
+}
+
+.save-btn:hover {
+
+background: #15803d;
+
+}
+
+.message {
+
+margin-top: 20px;
+
+text-align: center;
+
+padding: 12px;
+
+border-radius: 8px;
+
+font-weight: bold;
+
+background: #ecfdf5;
+
+color: #15803d;
+
+}
+
+.uid-grid {
+
+display: grid;
+
+grid-template-columns: 1fr 1fr;
+
+gap: 15px;
+
+}
+
+@media (max-width: 768px) {
+
+.uid-grid {
+
+
+grid-template-columns: 1fr;
+
+
+}
+
+.final-card {
+
+
+width: 100%;
+
+}
+
+}

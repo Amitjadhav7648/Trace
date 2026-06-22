@@ -1,0 +1,110 @@
+/* src/styles/TestStation.css */
+
+.test-page{
+
+  padding:30px;
+
+  background:#f1f5f9;
+
+  min-height:100vh;
+}
+
+.test-page h2{
+
+  margin-bottom:20px;
+
+  color:#1e293b;
+}
+
+/* INPUTS */
+
+.test-page input,
+.test-page select{
+
+  width:100%;
+
+  padding:12px;
+
+  margin-bottom:15px;
+
+  border:1px solid #cbd5e1;
+
+  border-radius:8px;
+
+  font-size:15px;
+}
+
+/* BUTTON GROUP */
+
+.button-group{
+
+  display:flex;
+
+  gap:15px;
+
+  margin-bottom:20px;
+}
+
+/* BUTTONS */
+
+.button-group button{
+
+  padding:12px 20px;
+
+  border:none;
+
+  border-radius:8px;
+
+  background:#2563eb;
+
+  color:white;
+
+  cursor:pointer;
+
+  font-size:15px;
+}
+
+.button-group button:hover{
+
+  background:#1d4ed8;
+}
+
+/* MESSAGE */
+
+.message{
+
+  margin-bottom:20px;
+
+  font-weight:bold;
+
+  color:green;
+}
+
+/* TABLE */
+
+table{
+
+  width:100%;
+
+  border-collapse:collapse;
+
+  background:white;
+}
+
+table th{
+
+  background:#2563eb;
+
+  color:white;
+
+  padding:12px;
+
+  text-align:left;
+}
+
+table td{
+
+  padding:12px;
+
+  border-bottom:1px solid #e2e8f0;
+}

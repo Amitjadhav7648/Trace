@@ -1,0 +1,202 @@
+/* =====================================================
+   COMPONENT MASTER PAGE CSS
+===================================================== */
+
+.component-master-page {
+
+  padding: 20px;
+
+  background: #f1f5f9;
+
+  min-height: 100vh;
+
+}
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.component-master-page h1 {
+
+  margin-bottom: 40px;
+
+  color: #64748b;
+
+}
+
+/* =====================================================
+   FORM CARD
+===================================================== */
+
+.component-form {
+
+  background: white;
+
+  padding: 20px;
+
+  border-radius: 10px;
+
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+  margin-bottom: 20px;
+
+  display: flex;
+
+  gap: 15px;
+
+  flex-wrap: wrap;
+
+}
+
+/* =====================================================
+   INPUTS
+===================================================== */
+
+.component-form input {
+
+  padding: 12px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 6px;
+
+  min-width: 220px;
+
+  outline: none;
+
+  font-size: 14px;
+
+}
+
+.component-form input:focus {
+
+  border-color: #2563eb;
+
+}
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.component-form button {
+
+  padding: 12px 20px;
+
+  background: #2563eb;
+
+  color: white;
+
+  border: none;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+}
+
+.component-form button:hover {
+
+  background: #1d4ed8;
+
+}
+
+/* =====================================================
+   TABLE CARD
+===================================================== */
+
+.component-table {
+
+  background: white;
+
+  padding: 20px;
+
+  border-radius: 10px;
+
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+}
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.component-table table {
+
+  width: 100%;
+
+  border-collapse: collapse;
+
+}
+
+.component-table th,
+.component-table td {
+
+  padding: 12px;
+
+  border: 1px solid #ddd;
+
+  text-align: center;
+
+}
+
+/* =====================================================
+   TABLE HEADER
+===================================================== */
+
+.component-table th {
+
+  background: #1e293b;
+
+  color: white;
+
+}
+
+/* =====================================================
+   TABLE ROW HOVER
+===================================================== */
+
+.component-table tr:hover {
+
+  background: #f8fafc;
+
+}
+
+/* =====================================================
+   ACTION BUTTONS
+===================================================== */
+
+.edit-btn {
+
+  background: #f59e0b;
+
+  color: white;
+
+  border: none;
+
+  padding: 7px 12px;
+
+  border-radius: 5px;
+
+  margin-right: 5px;
+
+  cursor: pointer;
+
+}
+
+.delete-btn {
+
+  background: #ef4444;
+
+  color: white;
+
+  border: none;
+
+  padding: 7px 12px;
+
+  border-radius: 5px;
+
+  cursor: pointer;
+
+}
