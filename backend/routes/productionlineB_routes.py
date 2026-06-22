@@ -231,19 +231,34 @@ def reject_batch():
 
         data = request.json
 
-        batch_ids = data.get("batch_ids")
+        batch_ids = data.get(
+            "batch_ids",
+            []
+        )
 
-        username = data.get("username")
+        reject_qty = int(
+            data.get(
+                "reject_qty",
+                0
+            )
+        )
 
-        password = data.get("password")
+        full_reject = data.get(
+            "full_reject",
+            False
+        )
+
+        username = data.get(
+            "username"
+        )
+
+        password = data.get(
+            "password"
+        )
 
         reject_reason = data.get(
             "reject_reason"
         )
-
-        # =================================================
-        # ADMIN VALIDATION
-        # =================================================
 
         if username != "admin" or \
            password != "admin123":
@@ -256,27 +271,141 @@ def reject_batch():
             }), 401
 
         conn = get_db_connection()
+
         conn.autocommit = False
 
-        cur = conn.cursor()
-
-        # =================================================
-        # REJECT MULTIPLE BATCHES
-        # =================================================
+        cur = conn.cursor(
+            cursor_factory=RealDictCursor
+        )
 
         for batch_id in batch_ids:
+
+            cur.execute("""
+
+                SELECT
+                    batch_id,
+                    batch_code,
+                    remaining_quantity,
+                    COALESCE(
+                        reject_quantity,
+                        0
+                    ) AS reject_quantity
+
+                FROM batch_scan
+
+                WHERE batch_id=%s
+
+            """, (
+
+                batch_id,
+
+            ))
+
+            batch = cur.fetchone()
+
+            if not batch:
+
+                continue
+
+            remaining_qty = batch[
+                "remaining_quantity"
+            ]
+
+            current_reject_qty = batch[
+                "reject_quantity"
+            ]
+
+            # =================================
+            # FULL BATCH REJECT
+            # =================================
+
+            if full_reject:
+
+                new_remaining_qty = 0
+
+                new_reject_qty = (
+
+                    current_reject_qty +
+
+                    remaining_qty
+
+                )
+
+                batch_status = "REJECTED"
+
+            # =================================
+            # PARTIAL REJECT
+            # =================================
+
+            else:
+
+                if reject_qty <= 0:
+
+                    return jsonify({
+
+                        "error":
+                        "Enter Reject Quantity"
+
+                    }), 400
+
+                if reject_qty > remaining_qty:
+
+                    return jsonify({
+
+                        "error":
+                        f"Reject Qty Greater Than Remaining Qty ({remaining_qty})"
+
+                    }), 400
+
+                new_remaining_qty = (
+
+                    remaining_qty -
+
+                    reject_qty
+
+                )
+
+                new_reject_qty = (
+
+                    current_reject_qty +
+
+                    reject_qty
+
+                )
+
+                batch_status = (
+
+                    "REJECTED"
+
+                    if new_remaining_qty == 0
+
+                    else "ACTIVE"
+
+                )
 
             cur.execute("""
 
                 UPDATE batch_scan
 
                 SET
-                    status='REJECTED',
+
+                    remaining_quantity=%s,
+
+                    reject_quantity=%s,
+
+                    status=%s,
+
                     reject_reason=%s
 
                 WHERE batch_id=%s
 
             """, (
+
+                new_remaining_qty,
+
+                new_reject_qty,
+
+                batch_status,
 
                 reject_reason,
 
@@ -293,18 +422,18 @@ def reject_batch():
         return jsonify({
 
             "message":
-            "Batches Rejected Successfully"
+            "Batch Rejected Successfully"
 
         })
 
     except Exception as e:
 
-     if 'conn' in locals():
-        conn.rollback()
+        return jsonify({
 
-    return jsonify({
-        "error": str(e)
-    }), 500
+            "error":
+            str(e)
+
+        }), 500
 
 
 # =========================================================

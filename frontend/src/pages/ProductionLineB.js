@@ -27,6 +27,10 @@ function ProductionLineB() {
   // ===================================================
   // COMMON
   // ===================================================
+  
+    const [rejectQty, setRejectQty] = useState("");
+    const [fullReject, setFullReject] = useState(false);
+  
   const navigate = useNavigate();
   const [line, setLine] = useState("B");
   const [message, setMessage] = useState("");
@@ -169,68 +173,111 @@ useEffect(() => {
 // =====================================================
 // REJECT BATCH WITH ADMIN LOGIN
 // =====================================================
-
 const rejectBatch = async () => {
 
-  try {
+try {
 
-    await axios.post(
 
-      "http://localhost:5000/api/reject-batch",
+await axios.post(
 
-      {
+  "http://localhost:5000/api/reject-batch",
 
-        batch_ids:
-        selectedBatches,
+  {
 
-        reject_reason:
-        rejectReason,
+    batch_ids:
+    selectedBatches,
 
-        username:
-        adminUsername,
+    reject_qty:
+    Number(rejectQty),
 
-        password:
-        adminPassword
+    full_reject:
+    fullReject,
 
-      }
+    reject_reason:
+    rejectReason,
 
-    );
+    username:
+    adminUsername,
 
-    alert(
-
-          `${selectedBatches.length} Batch Rejected Successfully`
-
-    );
-
-    // ===========================================
-    // CLOSE WINDOW
-    // ===========================================
-
-    setShowRejectLogin(false);
-
-    setAdminUsername("");
-
-    setAdminPassword("");
-
-    setRejectReason("");
-
-    fetchBatches();
+    password:
+    adminPassword
 
   }
 
-  catch (error) {
+);
 
-    alert(
+alert(
 
-      error.response?.data?.error ||
+  `${selectedBatches.length} Batch Rejected Successfully`
 
-      "Reject Failed"
+);
 
-    );
+// ===========================================
+// REFRESH FINISHED BATCH POPUP
+// ===========================================
 
+const response = await axios.get(
+
+  "http://localhost:5000/api/finished-batches-alert",
+
+  {
+    params: {
+      line,
+      product_id: productId
+    }
   }
+
+);
+
+setFinishedBatches(response.data);
+
+// ===========================================
+// CLEAR SELECTIONS
+// ===========================================
+
+setSelectedBatches([]);
+
+setRejectQty("");
+
+setRejectReason("");
+
+setAdminUsername("");
+
+setAdminPassword("");
+
+setFullReject(false);
+
+// ===========================================
+// CLOSE REJECT POPUP
+// ===========================================
+
+setShowRejectLogin(false);
+
+// ===========================================
+// REFRESH MAIN BATCH TABLE
+// ===========================================
+
+fetchBatches();
+}
+
+catch (error) {
+
+  console.log("FULL ERROR:", error);
+
+  console.log("RESPONSE:", error.response);
+
+  console.log("DATA:", error.response?.data);
+
+  alert(
+    JSON.stringify(error.response?.data) ||
+    error.message ||
+    "Reject Failed"
+  );
+
+}
 
 };
+
 
 //========================
 //Fetch Batches
@@ -698,6 +745,29 @@ const handleBatchSelection = (batchId) => {
             setAdminPassword(e.target.value)
           }
         />
+
+         <input
+  type="number"
+  placeholder="Reject Quantity"
+  value={rejectQty}
+  onChange={(e) =>
+    setRejectQty(e.target.value)
+  }
+/>
+
+<div style={{ marginTop: "10px" }}>
+  <input
+    type="checkbox"
+    checked={fullReject}
+    onChange={(e) =>
+      setFullReject(e.target.checked)
+    }
+  />
+
+  <label style={{ marginLeft: "8px" }}>
+    Full Batch Reject
+  </label>
+</div>
 
         {/* ===================================== */}
         {/* REASON */}

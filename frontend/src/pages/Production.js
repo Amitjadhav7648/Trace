@@ -31,7 +31,7 @@ function Production() {
   // ===================================================
   // COMMON
   // ===================================================
-  const [setShowFinishedBatchPopup] = useState(false);
+  
   const [rejectQty, setRejectQty] = useState("");
   const [fullReject, setFullReject] = useState(false);
 
@@ -216,11 +216,14 @@ useEffect(() => {
 // =====================================================
 // REJECT BATCH WITH ADMIN LOGIN
 // =====================================================
-
 const rejectBatch = async () => {
 
 try {
 
+
+// ===========================================
+// REJECT BATCH
+// ===========================================
 
 await axios.post(
 
@@ -228,55 +231,50 @@ await axios.post(
 
   {
 
-    batch_ids:
-    selectedBatches,
+    batch_ids: selectedBatches,
 
-    reject_qty:
-    Number(rejectQty),
+    reject_qty: Number(rejectQty),
 
-    full_reject:
-    fullReject,
+    full_reject: fullReject,
 
-    reject_reason:
-    rejectReason,
+    reject_reason: rejectReason,
 
-    username:
-    adminUsername,
+    username: adminUsername,
 
-    password:
-    adminPassword
+    password: adminPassword
 
   }
 
 );
 
 alert(
-
   `${selectedBatches.length} Batch Rejected Successfully`
-
 );
 
 // ===========================================
-// REFRESH FINISHED BATCH POPUP
+// REFRESH FINISHED BATCHES
 // ===========================================
+try {
 
-const response = await axios.get(
-
-  "http://localhost:5000/api/finished-batches-alert",
-
-  {
-    params: {
-      line,
-      product_id: productId
+  const response = await axios.get(
+    "http://localhost:5000/api/finished-batches-alert",
+    {
+      params: {
+        line,
+        product_id: productId
+      }
     }
-  }
+  );
 
-);
+  setFinishedBatches(response.data);
 
-setFinishedBatches(response.data);
+} catch (e) {
 
+  console.log("Finished batch refresh error:", e);
+
+}
 // ===========================================
-// CLEAR SELECTIONS
+// CLEAR ALL FIELDS
 // ===========================================
 
 setSelectedBatches([]);
@@ -298,21 +296,23 @@ setFullReject(false);
 setShowRejectLogin(false);
 
 // ===========================================
-// CLOSE FINISHED BATCH POPUP
-// IF NO BATCHES LEFT
+// REFRESH MAIN TABLE
 // ===========================================
 
-if (response.data.length === 0) {
+try {
 
-  setShowFinishedBatchPopup(false);
+  await fetchBatches();
 
 }
 
-// ===========================================
-// REFRESH MAIN BATCH TABLE
-// ===========================================
+catch (err) {
 
-fetchBatches();
+  console.log(
+    "fetchBatches failed:",
+    err
+  );
+
+}
 
 
 }
@@ -320,13 +320,21 @@ fetchBatches();
 catch (error) {
 
 
+console.log(
+  "Reject API Error:",
+  error
+);
+
 alert(
 
   error.response?.data?.error ||
 
+  error.message ||
+
   "Reject Failed"
 
 );
+
 
 }
 
