@@ -31,6 +31,7 @@ function Production() {
   // ===================================================
   // COMMON
   // ===================================================
+  const [setShowFinishedBatchPopup] = useState(false);
   const [rejectQty, setRejectQty] = useState("");
   const [fullReject, setFullReject] = useState(false);
 
@@ -38,11 +39,11 @@ function Production() {
   const [line, setLine] = useState("A");
   const [message, setMessage] = useState("");
   const [currentStation, setCurrentStation] = useState(1);
-const [batches, setBatches] = useState([]);
-const [selectedBatches, setSelectedBatches] = useState([]);
+  const [batches, setBatches] = useState([]);
+  const [selectedBatches, setSelectedBatches] = useState([]);
 
-const [productId, setProductId] = useState("");
-const [products, setProducts] = useState([]);
+  const [productId, setProductId] = useState("");
+  const [products, setProducts] = useState([]);
 
 // =====================================================
 // STATES
@@ -218,97 +219,141 @@ useEffect(() => {
 
 const rejectBatch = async () => {
 
-  try {
+try {
 
-    await axios.post(
 
-      "http://localhost:5000/api/reject-batch",
+await axios.post(
 
-      {
+  "http://localhost:5000/api/reject-batch",
 
-        batch_ids:
-        selectedBatches,
+  {
 
-        reject_qty: Number(rejectQty),
+    batch_ids:
+    selectedBatches,
 
-        full_reject:
-        fullReject,
+    reject_qty:
+    Number(rejectQty),
 
-        reject_reason:
-        rejectReason,
+    full_reject:
+    fullReject,
 
-        username:
-        adminUsername,
+    reject_reason:
+    rejectReason,
 
-        password:
-        adminPassword
+    username:
+    adminUsername,
 
-      }
-
-    );
-
-    alert(
-
-          `${selectedBatches.length} Batch Rejected Successfully`
-
-    );
-
-    // ===========================================
-    // CLOSE WINDOW
-    // ===========================================
-
-    setShowRejectLogin(false);
-
-    setAdminUsername("");
-
-    setAdminPassword("");
-
-    setRejectReason("");
-
-    fetchBatches();
+    password:
+    adminPassword
 
   }
 
-  catch (error) {
+);
 
-    alert(
+alert(
 
-      error.response?.data?.error ||
+  `${selectedBatches.length} Batch Rejected Successfully`
 
-      "Reject Failed"
+);
 
-    );
+// ===========================================
+// REFRESH FINISHED BATCH POPUP
+// ===========================================
 
+const response = await axios.get(
+
+  "http://localhost:5000/api/finished-batches-alert",
+
+  {
+    params: {
+      line,
+      product_id: productId
+    }
   }
+
+);
+
+setFinishedBatches(response.data);
+
+// ===========================================
+// CLEAR SELECTIONS
+// ===========================================
+
+setSelectedBatches([]);
+
+setRejectQty("");
+
+setRejectReason("");
+
+setAdminUsername("");
+
+setAdminPassword("");
+
+setFullReject(false);
+
+// ===========================================
+// CLOSE REJECT POPUP
+// ===========================================
+
+setShowRejectLogin(false);
+
+// ===========================================
+// CLOSE FINISHED BATCH POPUP
+// IF NO BATCHES LEFT
+// ===========================================
+
+if (response.data.length === 0) {
+
+  setShowFinishedBatchPopup(false);
+
+}
+
+// ===========================================
+// REFRESH MAIN BATCH TABLE
+// ===========================================
+
+fetchBatches();
+
+
+}
+
+catch (error) {
+
+
+alert(
+
+  error.response?.data?.error ||
+
+  "Reject Failed"
+
+);
+
+}
 
 };
 
 //========================
 //Fetch Batches
 //========================
-const fetchBatches = async () => {
+const fetchBatches = useCallback(async () => {
 
   try {
 
     if (!line || !productId) {
 
       setBatches([]);
-
       return;
 
     }
 
     const response = await axios.get(
-
       "http://localhost:5000/api/get-batches",
-
       {
         params: {
-          line: line,
+          line,
           product_id: productId
         }
       }
-
     );
 
     setBatches(response.data || []);
@@ -321,24 +366,15 @@ const fetchBatches = async () => {
 
   }
 
-};
+}, [line, productId]);
 
 useEffect(() => {
 
-  if (line && productId) {
+  fetchBatches();
 
-    fetchBatches();
+}, [fetchBatches]);
 
-  }
-  else {
-
-    setBatches([]);
-
-  }
-
-}, [line, productId]);
-
-  // ===================================================
+// ===================================================
   // CREATE UID
   // ===================================================
 const createUID = async () => {
